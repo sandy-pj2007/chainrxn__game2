@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chain Reaction</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!--menu-->
+  <div id="menu-screen">
+    <h1>Chain Reaction</h1>
+    <div class="menu-box">
+      <label>Players:
+        <select id="player-count">
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
+
+      <label>Game Timer (seconds, 0 = off):
+        <input id="game-timer-input" type="number" value="300" min="0" step="20" />
+      </label>
+
+      <label>Turn Timer (seconds, 0 = off):
+        <input id="turn-timer-input" type="number" value="15" min="0" step="5" />
+      </label>
+
+      <button id="start-btn">Start Game</button>
+      <button id="lb-btn">Leaderboard</button>
+    </div>
+  </div>
+
+  <!--game screen -->
+  <div id="game-screen" class="hidden">
+
+    <!-- Top bar -->
+    <div id="top-bar">
+      <button id="menu-btn">Menu</button>
+      <button id="pause-btn">Pause</button>
+      <span id="game-timer-display"></span>
+      <button id="sound-btn">Sound: ON</button>
+    </div>
+
+    <!-- Player info strips -->
+    <div id="player-strips"></div>
+
+    <!-- Grid -->
+    <div id="grid-wrap">
+      <div id="grid"></div>
+    </div>
+
+    <!-- Status message -->
+    <div id="status-msg"></div>
+
+    <!-- Move history -->
+    <div id="history-wrap">
+      <strong>Move History</strong>
+      <ol id="history-list"></ol>
+    </div>
+
+    <!-- Pause and menu -->
+    <div id="pause-overlay" class="overlay hidden">
+      <div class="overlay-box">
+        <h2>Paused</h2>
+        <button id="resume-btn">Resume</button>
+        <button id="restart-btn">Restart</button>
+        <button id="pause-menu-btn">Menu</button>
+      </div>
+    </div>
+
+    <!-- Game over overlay -->
+    <div id="gameover-overlay" class="overlay hidden">
+      <div class="overlay-box">
+        <h2 id="gameover-title"></h2>
+        <div id="final-scores"></div>
+        <button id="play-again-btn">Play Again</button>
+        <button id="over-menu-btn">Menu</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── LEADERBOARD SCREEN ── -->
+  <div id="lb-screen" class="hidden">
+    <h2>Leaderboard</h2>
+    <button id="lb-back-btn">Back</button>
+    <button id="lb-clear-btn">Clear</button>
+    <table id="lb-table">
+      <thead>
+        <tr><th>#</th><th>Player</th><th>Score</th><th>Date</th></tr>
+      </thead>
+      <tbody id="lb-body"></tbody>
+    </table>
+  </div>
+
+
+  <script src="../js/index.js"></script>
+</body>
+</html>
